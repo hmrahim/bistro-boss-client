@@ -9,9 +9,9 @@ const Cover = ({ image, title, SubTitle }) => {
       className="hero h-[700px]"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <div className="hero-overlay bg-opacity-20"></div>
+      <div className="hero-overlay bg-opacity-75"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className=" bg-black md:w-2/4 p-5 rounded-2xl opacity-75">
+        <div className=" md:w-2/4 p-5 ">
           <h1 className="mb-5 text-5xl font-bold text-white text-[85px]">{title}</h1>
           <p className="mb-5 text-xl">{SubTitle}</p>
          
