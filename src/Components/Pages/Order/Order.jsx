@@ -5,8 +5,12 @@ import Cover from "../../Shared/Cover";
 import coverImage from "../../../assets/shop/banner2.jpg";
 import FoodCard from "../../Shared/FoodCard";
 import UseMenu from "../../Hooks/useMenu";
+import { useParams } from "react-router-dom";
 const Order = () => {
-  const [tabindex, setTabindex] = useState(0);
+  const {category} = useParams()
+  const categories = ["salad","dessert","soup","pizza"]
+  const initialIndex = categories.indexOf(category)
+  const [tabindex, setTabindex] = useState(initialIndex);
   const [menu] = UseMenu();
   const salad = menu.filter((item) => item.category === "salad");
   const soup = menu.filter((item) => item.category === "soup");

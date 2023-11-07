@@ -14,7 +14,7 @@ const TodayOffer = () => {
     return (
         <div className='w-4/5 mx-auto'>
             <SectionTitle subTitle="Don't miss" title="TODAY'S OFFER"/>
-            <MenuCategory menu={offered}/>
+            <MenuCategory title="offerd" menu={offered}/>
             
         </div>
     );

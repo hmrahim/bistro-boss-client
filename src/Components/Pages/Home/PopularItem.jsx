@@ -17,9 +17,9 @@ const PopularItem = () => {
         ))}
       </div> */}
       < MenuCategory menu={popularItem}/>
-      <button className="btn btn-neutral w-96 border-0 border-b-4 bg-transparent hover:text-white text-black">
-        View Full Menu
-      </button>
+      
+
+      
     </section>
   );
 };

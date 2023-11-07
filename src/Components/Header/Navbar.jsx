@@ -1,7 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { authContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const Navigate = useNavigate()
+  const {user,logOut} = useContext(authContext)
+  const handleLogout = ()=> {
+    logOut()
+    .then(res=> {
+      // <Navigate to="/login" />
+      Navigate('/login')
+      toast.success("User logout success")
+    })
+    .catch(error=> toast.error(error.message))
+  }
+
   const NavMenu = (
     <>
       
@@ -14,6 +28,7 @@ const Navbar = () => {
       <li>
         <Link to="/order">Order Now</Link>
       </li>
+ 
    
     </>
   );
@@ -52,7 +67,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {
+          user ? 
+          <button onClick={handleLogout} className="btn">Logout</button>
+          :
+      <Link to="/login" className="btn">Login</Link>
+        }
       </div>
     </div>
   );
